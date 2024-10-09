@@ -20,17 +20,17 @@
             </div>
             <div class="card-action">
                 <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn green accent-4">Éditer</a>
-                <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn red">Supprimer</a>
-            
-                <!-- Moddal -->
+                <a href="#modal-{{ category.id }}" class="btn red modal-trigger">Supprimer</a>
+
+                <!-- Modal -->
                 <div id="modal-{{ category.id }}" class="modal">
                     <div class="modal-content">
-                        <h4>Are you sure want to delete this Category?<h4>
-                        <p>This action connot be undone.</p>
+                        <h4>Êtes-vous sûr de vouloir supprimer cette catégorie ?</h4>
+                        <p>Cette action est irréversible.</p>
                     </div>
                     <div class="modal-footer">
                         <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn red">Supprimer</a>
-                        <a href="modal-close" class="btn green accent-4">Annuler</a>
+                        <a href="#!" class="modal-close btn green accent-4">Annuler</a>
                     </div>
                 </div>
             </div>
@@ -38,5 +38,13 @@
     </div>
     {% endfor %}
 </div>
+
+<!-- Materialize Modal Initialization -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+  });
+</script>
 
 {% endblock %}
