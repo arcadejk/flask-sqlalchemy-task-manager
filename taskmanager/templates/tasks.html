@@ -2,5 +2,11 @@
 {% block content %}
 
 <h3 class="light-blue-text text-darken-4 center-align">Tâches</h3>
-
+<div class="row"></div>
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_task') }}" class="btn-large light-blue darken-2">
+            Ajouter une tâche <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
 {% endblock %}
