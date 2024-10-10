@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Créer un compte</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('register') }}">
+        <!-- username -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="username" name="username" type="text" class="validate" required>
+                <label for="username">Nom d'utilisateur</label>
+            </div>
+        </div>
+        <!-- email -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-envelope prefix light-blue-text text-darken-4"></i>
+                <input id="email" name="email" type="email" class="validate" required>
+                <label for="email">Adresse e-mail</label>
+            </div>
+        </div>
+        <!-- password -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-lock prefix light-blue-text text-darken-4"></i>
+                <input id="password" name="password" type="password" class="validate" required>
+                <label for="password">Mot de passe</label>
+            </div>
+        </div>
+        <!-- confirm password -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-lock prefix light-blue-text text-darken-4"></i>
+                <input id="confirm_password" name="confirm_password" type="password" class="validate" required>
+                <label for="confirm_password">Confirmez le mot de passe</label>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1">
+                    S'inscrire <i class="fas fa-user-plus right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Link to login page -->
+    <div class="row">
+        <div class="col s12 center-align">
+            <p>Déjà un compte? <a href="{{ url_for('login') }}" class="light-blue-text darken-1">Se connecter</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

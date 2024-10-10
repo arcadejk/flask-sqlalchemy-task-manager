@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Ajouter une tâche</h3> <!-- Correction ici -->
+<h3 class="light-blue-text text-darken-4 center-align">Ajouter une tâche</h3> <!-- Titre de la page -->
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
+    <form class="col s12" method="POST" enctype="multipart/form-data" action="{{ url_for('add_task') }}">
         <!-- task name -->
         <div class="row">
             <div class="input-field col s12">
@@ -13,6 +13,7 @@
                 <label for="task_name">Intitulé de la tâche</label>
             </div>
         </div>
+        
         <!-- task description -->
         <div class="row">
             <div class="input-field col s12">
@@ -21,6 +22,7 @@
                 <label for="task_description">Description de la tâche</label>
             </div>
         </div>
+        
         <!-- due date -->
         <div class="row">
             <div class="input-field col s12">
@@ -29,6 +31,7 @@
                 <label for="due_date">Délai</label>
             </div>
         </div>
+
         <!-- is urgent -->
         <div class="row">
             <div class="input-field col s12">
@@ -42,6 +45,7 @@
                 </div>
             </div>
         </div>
+
         <!-- category id -->
         <div class="row">
             <div class="input-field col s12">
@@ -55,6 +59,29 @@
                 <label for="category_id">Catégorie</label>
             </div>
         </div>
+
+        <!-- new link field -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
+                <input id="link" name="link" type="url" class="validate">
+                <label for="link">Lien de l'exercice</label>
+            </div>
+        </div>
+
+        <!-- file upload field for submitting completed tasks -->
+        <div class="row">
+            <div class="file-field input-field col s12">
+                <div class="btn light-blue darken-1">
+                    <span>Envoyer un fichier</span>
+                    <input type="file" name="submitted_file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Télécharger un fichier complété">
+                </div>
+            </div>
+        </div>
+
         <!-- submit button -->
         <div class="row">
             <div class="col s12 center-align">

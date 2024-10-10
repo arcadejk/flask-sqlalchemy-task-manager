@@ -26,6 +26,7 @@
                 <li><a href="{{ url_for('home') }}">Page initiale</a></li>
                 <li><a href="{{ url_for('add_task') }}">Nouvelle Tâche</a></li>
                 <li><a href="{{ url_for('categories') }}">Catégories</a></li>
+                <li><a href="{{ url_for('login') }}">Se connecter</a></li> <!-- Lien pour la page de connexion -->
             </ul>
             </div>
         </nav>
@@ -35,6 +36,7 @@
             <li><a href="{{ url_for('home') }}">Page initiale</a></li>
             <li><a href="{{ url_for('add_task') }}">Nouvelle Tâche</a></li>
             <li><a href="{{ url_for('categories') }}">Catégories</a></li>
+            <li><a href="{{ url_for('login') }}">Se connecter</a></li> <!-- Lien mobile pour la connexion -->
         </ul>
     </header>
 
@@ -56,4 +58,4 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
-</html>               
+</html>

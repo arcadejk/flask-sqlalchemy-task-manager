@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Se connecter</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('login') }}">
+        <!-- Nom d'utilisateur -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="username" name="username" type="text" class="validate" required>
+                <label for="username">Nom d'utilisateur</label>
+            </div>
+        </div>
+        <!-- Mot de passe -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-lock prefix light-blue-text text-darken-4"></i>
+                <input id="password" name="password" type="password" class="validate" required>
+                <label for="password">Mot de passe</label>
+            </div>
+        </div>
+        <!-- Bouton Se connecter -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1">
+                    Se connecter <i class="fas fa-sign-in-alt right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Lien Mot de passe oublié -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('reset_password_request') }}" class="light-blue-text text-darken-4">
+                    Mot de passe oublié ?
+                </a>
+            </div>
+        </div>
+        <!-- Lien Créer un nouveau compte -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4">
+                    Créer un nouveau compte
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
